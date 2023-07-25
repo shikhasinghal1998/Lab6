@@ -3,7 +3,6 @@
 * Devices: TMS320F2837xD
 * Author: C2000 Technical Training, Texas Instruments
 **********************************************************************/
-// Test comment
 
 #include "Lab.h"						// Main include file
 

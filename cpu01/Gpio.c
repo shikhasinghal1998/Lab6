@@ -1,5 +1,5 @@
 /**********************************************************************
-* File: Gpio.c -- Lab File
+* File: Gpio.c -- Solution File
 * Devices: TMS320F28x7x
 * Author: C2000 Technical Training, Texas Instruments
 **********************************************************************/
@@ -47,7 +47,7 @@ void InitGpio(void)
 
 	//-----------------------------------------------------------------------------------------------------
 	GpioCtrlRegs.GPAGMUX1.bit.GPIO0 = 0;		// 0|0=GPIO  0|1=EPWM1A       0|2=rsvd         0|3=rsvd
-	GpioCtrlRegs.GPAMUX1.bit.GPIO0  = 0;		// 1|0=GPIO  1|1=rsvd         1|2=SDAA         1|3=rsvd
+	GpioCtrlRegs.GPAMUX1.bit.GPIO0  = 1;		// 1|0=GPIO  1|1=rsvd         1|2=SDAA         1|3=rsvd
 												// 2|0=GPIO  2|1=rsvd         2|2=rsvd         2|3=rsvd
 												// 3|0=GPIO  3|1=rsvd         3|2=rsvd         3|3=rsvd
 	//-----------------------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 /**********************************************************************
-* File: Watchdog.c -- Lab File
+* File: Watchdog.c -- Solution File
 * Devices: TMS320F28x7x
 * Author: C2000 Technical Training, Texas Instruments
 **********************************************************************/

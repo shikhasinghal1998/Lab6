@@ -1,5 +1,5 @@
 /**********************************************************************
-* File: Xbar.c -- Lab File
+* File: Xbar.c -- Solution File
 * Devices: TMS320F28x7x
 * Author: C2000 Technical Training, Texas Instruments
 **********************************************************************/
@@ -27,7 +27,7 @@ void InitXbar(void)
 	InputXbarRegs.INPUT4SELECT = 0;                    // Feed GPIO0 to XINT1, ePWM X-Bar, Output X-Bar via Input X-Bar
 	InputXbarRegs.INPUT5SELECT = 0;                    // Feed GPIO0 to XINT2, ADCEXTSOC, EXTSYNCIN1, ePWM X-Bar, Output X-Bar via Input X-Bar	
 	InputXbarRegs.INPUT6SELECT = 0;                    // Feed GPIO0 to XINT3, ePWM[TRIP6], EXTSYNCIN2, ePWM X-Bar, Output X-Bar via Input X-Bar	
-	InputXbarRegs.INPUT7SELECT = 0;                    // Feed GPIO0 to eCAP1 via Input X-Bar	
+	InputXbarRegs.INPUT7SELECT = 24;                   // Feed GPIO24 to eCAP1 via Input X-Bar	
 	InputXbarRegs.INPUT8SELECT = 0;                    // Feed GPIO0 to eCAP2 via Input X-Bar
 	InputXbarRegs.INPUT9SELECT = 0;                    // Feed GPIO0 to eCAP3 via Input X-Bar
 	InputXbarRegs.INPUT10SELECT = 0;                   // Feed GPIO0 to eCAP4 via Input X-Bar

@@ -1,9 +1,9 @@
 /**********************************************************************
-* File: Main_6.c -- File for Lab 6
+* File: Main_6.c -- Solution File for Lab 6
 * Devices: TMS320F28x7x
 * Author: C2000 Technical Training, Texas Instruments
 **********************************************************************/
-// Test comment2
+
 #include "Lab.h"                        // Main include file
 
 //--- Global Variables
@@ -29,9 +29,9 @@ void main(void)
 	InitWatchdog();						// Initialize the Watchdog Timer (FILE: WatchDog.c)
 
 //--- Peripheral Initialization
-                                        // Initialize the ADC-A (FILE: Adc.c)
-                                        // Initialize the DAC-B (File: Dac.c)
-                                        // Initialize the EPwm (FILE: EPwm.c) 
+	InitAdca();							// Initialize the ADC-A (FILE: Adc.c)
+	InitDacb();                         // Initialize the DAC-B (File: Dac.c)
+	InitEPwm();							// Initialize the EPwm (FILE: EPwm.c) 
 
 //--- Enable global interrupts
 	asm(" CLRC INTM, DBGM");			// Enable global interrupts and realtime debug

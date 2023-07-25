@@ -1,5 +1,5 @@
 /**********************************************************************
-* File: Adc.c -- Lab File
+* File: Adc.c -- Solution File
 * Devices: TMS320F28x7x
 * Author: C2000 Technical Training, Texas Instruments
 **********************************************************************/
@@ -50,22 +50,22 @@ void InitAdca(void)
     AdcSetMode(ADC_ADCA, ADC_RESOLUTION_12BIT, ADC_SIGNALMODE_SINGLE);
 
 //--- SOC0 configuration
-	AdcaRegs.ADCSOC0CTL.bit.TRIGSEL = ?;		// Trigger
-	AdcaRegs.ADCSOC0CTL.bit.CHSEL = ?;			// Convert channel
-	AdcaRegs.ADCSOC0CTL.bit.ACQPS = ?;			// Acquisition window
+	AdcaRegs.ADCSOC0CTL.bit.TRIGSEL = 7;		// Trigger using ePWM2-ADCSOCA
+	AdcaRegs.ADCSOC0CTL.bit.CHSEL = 0;			// Convert channel ADCINA0 (Ch. 0)
+	AdcaRegs.ADCSOC0CTL.bit.ACQPS = 19;			// Acquisition window set to (19+1)=20 cycles (100 ns with 200 MHz SYSCLK)
 
-	AdcaRegs.ADCINTSOCSEL1.bit.SOC0 = ?;		// ADC interrupt triggers
+	AdcaRegs.ADCINTSOCSEL1.bit.SOC0 = 0;		// No ADC interrupt triggers SOC0 (TRIGSEL field determines trigger)
 
-	AdcaRegs.ADCSOCPRICTL.bit.SOCPRIORITY = ?;	// SOC priority mode
+	AdcaRegs.ADCSOCPRICTL.bit.SOCPRIORITY = 0;	// All SOCs handled in round-robin mode
 
 //--- ADCA1 interrupt configuration
-	AdcaRegs.ADCINTSEL1N2.bit.INT1CONT = ?;		// Interrupt pulses
-	AdcaRegs.ADCINTSEL1N2.bit.INT1E = ?;		// ADC interrupt enable
-	AdcaRegs.ADCINTSEL1N2.bit.INT1SEL = ?;		// EOC triggers the interrupt
+	AdcaRegs.ADCINTSEL1N2.bit.INT1CONT = 1;		// Interrupt pulses regardless of flag state
+	AdcaRegs.ADCINTSEL1N2.bit.INT1E = 1;		// Enable the interrupt in the ADC
+	AdcaRegs.ADCINTSEL1N2.bit.INT1SEL = 0;		// EOC0 triggers the interrupt
 
 //--- Enable the ADC interrupt
-                                                // Enable ADCA1 interrupt in PIE group 1
-                                                // Enable INT1 in IER to enable PIE group
+	PieCtrlRegs.PIEIER1.bit.INTx1 = 1;			// Enable ADCA1 interrupt in PIE group 1
+	IER |= 0x0001;								// Enable INT1 in IER to enable PIE group
 
 //--- Finish up
 	AdcaRegs.ADCCTL1.bit.ADCPWDNZ = 1;			// Power up the ADC
