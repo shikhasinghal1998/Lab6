@@ -4,6 +4,8 @@
 * Author: C2000 Technical Training, Texas Instruments
 **********************************************************************/
 
+// Test comment
+
 #include "Lab.h"                        // Main include file
 
 //--- Global Variables
