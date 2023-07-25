@@ -5,6 +5,7 @@
 **********************************************************************/
 
 // Test comment
+// Test comment 2
 
 #include "Lab.h"                        // Main include file
 
