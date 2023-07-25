@@ -3,7 +3,7 @@
 * Devices: TMS320F28x7x
 * Author: C2000 Technical Training, Texas Instruments
 **********************************************************************/
-
+// Test comment2
 #include "Lab.h"                        // Main include file
 
 //--- Global Variables
